@@ -1,0 +1,13 @@
+@font-face {
+    font-family: '풍선';
+    src: url(/fonts/balloons.woff);
+}
+
+@font-face {
+    font-family: '양재';
+    src: url(/fonts/YGBI08.woff);
+}
+
+.Selector {
+    border: none;
+}

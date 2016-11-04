@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Balloons';
+    src: url(/font/balloons.woff);
+}
+
+@font-face {
+    font-family: 'YGKB';
+    src: url(/font/YGBI08.ttf);
+}
+
+
+p:nth-child(2) {
+    font-family: '궁서';
+}
+
+p:nth-child(2)::after {
+    content: " - 궁서체";
+}
+
+p:nth-child(3) {
+    font-family: 'Balloons';
+}
+
+p:nth-child(4) {
+    font-family: 'YGKB';
+    color:red;
+}

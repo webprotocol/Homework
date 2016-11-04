@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+<link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Shrikhand">          
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    /*
+     * Pseudo Class
+     */
+    p:nth-child(2) {
+        font-family: 'Tangerine';
+        color: red;
+    }
+    /*
+     * Pseudo Element
+     */
+    p:nth-child(2)::after {
+        content: " 'Tangerine";
+    }
+
+    p:nth-of-type(3) {
+        font-family: 'Shrikhand';
+    }
+    p:nth-child(3)::after {
+        content: " Shrikhand";
+    }
+
+    p:nth-child(4) {
+        font: 20px/5px 'hanna';
+    }
+    p:nth-child(4)::after {
+        content: " hanna";
+    }
+
+    p {
+        border: 1px solid red;
+        line-height: 2em;
+    }
+
+</style>
+</head>
+<body>
+
+<p>M Hello Font 대한민국</p>
+<p>M Hello Font 대한민국</p>
+<p>M Hello Font 대한민국</p>
+<p>M Hello Font 대한민국</p>
+
+</body>
+
+</html>

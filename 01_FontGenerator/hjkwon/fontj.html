@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/fontj.css" rel="stylesheet">
+	<style id="m_HeadCSS">
+    </style>
+</head>
+
+<body>
+	<fieldset class="Selector">
+		Font-Family
+		<select id="m_FamilyType" onchange=ChangeFontType(value)>
+			<option value="0" default>굴림</option>
+			<option value="1">풍선</option>
+			<option value="2">양재</option>
+		</select>
+	</fieldset>
+	<fieldset class="Selector">
+		Font-Size : <input type="range" value="16" min="10" max="240" oninput=ChangeFontSize(value)>
+	</fieldset>
+	<fieldset class="Selector">
+		Font-Style :
+		<input type="radio" name="style" value="normal" onchange=ChangeFontStyle(value) Checked="checked">Normal
+		<input type="radio" name="style" value="italic" onchange=ChangeFontStyle(value)><i>Italic</i>
+	</fieldset>
+	<fieldset class="Selector">
+		Font-Weight :
+		<input type="radio" name="weight" value="normal" onchange=ChangeFontWeight(value) Checked="checked">Normal
+		<input type="radio" name="weight" value="bold" onchange=ChangeFontWeight(value)>
+		<B>Bold</b>
+	</fieldset>
+	<fieldset class="Selector">
+		Font-Color :
+		<div id="ColorBox">
+			Red : <input name="red" type="range" min="0" max="255" value="0" oninput=ChangeColorRed(this.value)>
+			<span class="ValueBox">Value : </span><span id=RedValue>00</span>
+		</div>
+		<div id="ColorBox">
+			Green : <input name="green" type="range" min="0" max="255" value="0" oninput=ChangeColorGreen(this.value)>
+			<span class="ValueBox">Value : </span><span id=GreenValue>00</span>
+		</div>
+		<div id="ColorBox">
+			Blue : <input name="blue" type="range" min="0" max="255" value="0" oninput=ChangeColorBlue(this.value)>
+			<span class="ValueBox">Value : </span><span id=BlueValue>00</span>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend>Custom CSS Box</legend>
+		<textarea id="m_Customs" rows=8 cols=120 placeholder="여기에 CSS 스타일을 입력하세요"></textarea>
+		<button onclick=CssCheck()>CSS 변경하기</button>
+	</fieldset>
+
+
+	<fieldset>
+		<legend>Custom CSS Box2</legend>
+		<input id="m_Customs2" type="text" size=120 oninput=CssCheck2() placeholder="여기에 CSS 적용내용만 입력하세요">
+	</fieldset>
+
+	<fieldset>
+		<legend>폰트 변경 테스트</legend>
+		<span id="m_String">Hello Font 대한민국</span>
+	</fieldset>
+
+	<fieldset class="Selector">
+		<span id="m_Alert"></span>
+	</fieldset>
+
+	<script src="js/fontj.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+     fieldset {
+         background-color:mistyrose;
+         border: 5px solid black;
+         height:100%;
+        
+     }
+     
+     label{
+         font-weight: bold;
+        
+     }
+     
+
+     #nan {
+         font-family : 'Nanum pen script';
+     }
+     
+     #ini {
+         font-family:'initial';
+     }
+     
+     #ball {
+         font-family:'SF Balloons'
+     }
+
+     #wad {
+         font-family:'Yj WADAG'
+     }
+
+     #did {
+         font-family: '양재깨비체B'
+     }
+     #explan_out{
+         margin:30px;
+         font-size:12pt;
+         text-decoration:underline;
+         padding :5px;
+         font-style: italic;
+     }
+    </style>
+
+    
+    </head>
+    <body>
+    
+    <fieldset>
+    
+    <p id=font_out style="font-size:25pt">Hello Font 대한민국</p>
+    <span id=explan_out>선택하세요.</span><br><br>
+
+    <label for="fontf">Font-Family : </label>
+    <select id="fontf" onchange="famChange(event)">
+        <option value="initial">선택하세요.</option>
+        <option id="ini" value="initial">initial</option>
+        <option id="ball"value="SF Balloons">balloons</option>
+        <option id="wad"value="Yj WADAG">wadg</option>
+        <option id="did" value="양재깨비체B">양재깨비체B</option>
+        <option id="nan" value="Nanum pen script">Nanum pen script</option>
+    </select><br>
+
+    <label for="fonts">Font-Size : </label>
+    <span>0</span><input id="fonts" type="range" min="0" max="50" value="25" oninput="sizeChange(event)">
+    <span>50</span><br>
+
+    <label for="fontst">Font-Style : </label>
+    <p><input id="fontst" name="clickc" value="normal" type="radio" onclick="styleChange(event)">Normal</p>
+    <p><input id="fontst" name="clickc" value="italic" type="radio" onclick="style_Change(event)">Italic</p>
+
+    <label for="fontw">Font-Weight : </label>
+    <select id="fontw" onchange="fwChange(event)">
+        <option value="nomal">Nomal</option>
+        <option value="bold">Bold</option>            
+    </select><br>
+
+    <label for="font" class:"gtt">Font : </label>
+    <input id="font" type="text" oninput="fontChange(event)">
+
+
+    
+    </fieldset>
+    <script>
+        
+        function famChange(event) {
+
+            var ffont = event.target.value;
+            font_out.style.fontFamily = ffont;
+            explan_out.innerHTML = '글꼴 : ' +ffont+ ' 입니다.';
+        }
+
+        function sizeChange(event) {
+            var sfont = event.target.value;
+            font_out.style.fontSize = sfont+'pt';
+
+        }
+        function styleChange(event) {
+            var stfont=event.target.value;
+            font_out.style.fontStyle = stfont;
+
+        }
+        function style_Change(event) {
+            var sstfont=event.target.value;
+            font_out.style.fontStyle = sstfont;
+        }
+        function fwChange(event) {
+            var wfont=event.target.value;
+            font_out.style.fontWeight = wfont;
+        }
+        function fontChange(event) {
+            var fonta=event.target.value;
+            font_out.style.font = fonta;
+        }
+        
+
+    </script>
+
+
+
+    </body>
+</html>

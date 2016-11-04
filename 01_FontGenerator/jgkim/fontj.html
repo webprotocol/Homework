@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title>fontj.html</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<link href="css/style.css" rel="stylesheet">-->
+
+	<style>
+		@font-face {
+			font-family : 'balloons';
+			src : url("fonts/balloons.woff");
+		}
+
+		@font-face {
+			font-family : 'ygbi';
+			src : url("fonts/ygbi08.woff");
+		}
+
+		@font-face {
+			font-family : 'YJ';
+			src : url("fonts/ywda05.woff");
+		}
+
+		p {
+			border : 2px solid black;
+			display : inline-block;
+			padding : 6px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<p id="textOut">Hello Font 대한민국</p><br>
+
+	<input type="radio" name="opFs1" value="1" onclick="chooseFS(event)" checked> 스타일 선택
+	<input type="radio" name="opFs1" value="2" onclick="chooseFS(event)"> 스타일 직접 입력
+
+	<fieldset id="fs1">
+		<legend>Controllers</legend>
+
+		<div>
+		<label for="fontCtr">
+			폰트 설정 :
+			<select id="fontCtr" onclick="changeFont(event)">
+				<option value="default">기본값</option>
+				<option value="balloons">Balloons</option>
+				<option value="ygbi">양재깨비</option>
+				<option value="YJ">양재와당체</option>
+			</select>
+		</label>
+		</div>
+
+		<div>
+		<label for="fsizeCtr">
+			폰트 크기 설정 :
+			<input id="fsizeCtr" type="range" name="" value="12" min="10" max="40" oninput="changefSize(event)">
+		</label>
+		</div>
+
+		<div>
+		<label for="">
+			폰트 스타일 설정 :
+			<input type="radio" name="style" value="normal" checked onclick="changefStyle(event)">기본
+			<input type="radio" name="style" value="italic" onclick="changefStyle(event)">이탤릭
+		</label>
+		</div>
+
+		<div>
+		<label for="">
+			대문자 크기 :
+			<input type="radio" name="variant" value="normal" checked onclick="changefVariant(event)">일반
+			<input type="radio" name="variant" value="small-caps" onclick="changefVariant(event)">작게
+		</label>
+		</div>
+
+		<div>
+		<label for="">
+			font-weight :
+			<input type="radio" name="weight" value="normal" checked onclick="changeWeight(event)">Normal
+			<input type="radio" name="weight" value="bold" onclick="changeWeight(event)">Bold
+			<input type="radio" name="weight" value="lighter" onclick="changeWeight(event)">연하게
+			<input type="radio" name="weight" value="bolder" onclick="changeWeight(event)">진하게
+			<input type="radio" name="weight" value="byValue" onclick="changeWeight(event)">직접입력 :
+			<input type="number" name="weight" id="inputWeight" min="100" max="900" oninput="changeWeight(event)" disabled="true">
+		</label>
+		</div>
+
+	</fieldset>
+
+	<fieldset id="fs2" style="display:none">
+		<legend>직접 입력 :</legend>
+		<input type="text" id="zzzz" name="" oninput="assignStyle(event)">
+	</fieldset>
+
+
+	<script>
+
+		function changeFont(event)
+		{
+			switch (event.target.value)
+			{
+				case 'balloons' :
+					textOut.style['fontFamily'] = "balloons";
+					break;
+				case 'ygbi' :
+					textOut.style['fontFamily'] = "ygbi";
+					break;
+				case 'YJ' :
+					textOut.style['fontFamily'] = "YJ";
+					break;
+				default :
+					textOut.style['fontFamily'] = "";
+					break;
+			}
+		}
+
+		function changefSize(event)
+		{
+			textOut.style['fontSize'] = event.target.value + "pt";
+		}
+
+		function changefStyle(event)
+		{
+			textOut.style['fontStyle'] = event.target.value;
+		}
+
+		function changefVariant(event)
+		{
+			textOut.style['fontVariant'] = event.target.value;
+		}
+
+
+		function changeWeight(event)
+		{
+			if (event.target == inputWeight)
+			{
+				textOut.style['fontWeight'] = event.target.value;
+				return;
+			}
+
+			switch (event.target.value)
+			{
+				case 'byValue' :
+					inputWeight.disabled = false;
+					break;
+				default :
+					inputWeight.disabled = true;
+					textOut.style['fontWeight'] = event.target.value;
+			}
+		}
+
+
+		function assignStyle(event)
+		{
+			textOut.setAttribute("style", event.target.value);
+		}
+
+
+		function chooseFS(event)
+		{
+			if (event.target.value == "1")
+			{
+				fs1.style.display = "block";
+				fs2.style.display = "none";
+			}
+			else
+			{
+				fs1.style.display = "none";
+				fs2.style.display = "block";
+			}
+		}
+	</script>
+</body>
+
+</html>

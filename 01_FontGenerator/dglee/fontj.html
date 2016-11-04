@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+
+
+    </head>
+    <body>
+
+    <fieldset>
+
+    <p id=font_out>Hello Font 대한민국</p>
+
+    <label for="fontf">Font-Family</label>
+    <select id="fontf" onchange="famChange(event)">
+        <option value="initial">initial</option>
+        <option value="SF Balloons">balloons</option>
+        <option value="Yj WADAG">wadg</option>
+        <option value="양재깨비체B">양재깨비</option>
+    </select>
+
+    <label for="fonts">Font-Size</label>
+    <span>0</span><input id="fonts" type="range" min="0" max="50" value="25" oninput="sizeChange(event)">
+    <span>50</span><br>
+
+    <label for="fontst">Font-Style</label>
+    <p><input id="fontst" name="clickc" value="normal" type="radio" onclick="styleChange(event)">Normal</p>
+    <p><input id="fontst" name="clickc" value="italic" type="radio" onclick="style_Change(event)">Italic</p>
+
+    <label for="fontw">Font-Weight</label>
+    <select id="fontw" onchange="fwChange(event)">
+        <option value="nomal">Nomal</option>
+        <option value="bold">Bold</option>
+    </select><br>
+
+    <label for="font">Font</label>
+    <input id="font" type="text" oninput="fontChange(event)">
+
+
+
+    </fieldset>
+    <script>
+
+        function famChange(event) {
+
+            var ffont = event.target.value;
+            font_out.style.fontFamily = ffont;
+        }
+
+        function sizeChange(event) {
+            var sfont = event.target.value;
+            font_out.style.fontSize = sfont+'pt';
+
+        }
+        function styleChange(event) {
+            var stfont=event.target.value;
+            font_out.style.fontStyle = stfont;
+
+        }
+        function style_Change(event) {
+            var sstfont=event.target.value;
+            font_out.style.fontStyle = sstfont;
+        }
+        function fwChange(event) {
+            var wfont=event.target.value;
+            font_out.style.fontWeight = wfont;
+        }
+        function fontChange(event) {
+            var fonta=event.target.value;
+            font_out.style.font = fonta;
+        }
+
+
+    </script>
+
+
+
+    </body>
+</html>

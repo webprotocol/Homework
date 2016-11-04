@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--<link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Indie+Flower">-->
+
+    </head>
+<style>
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+
+    p {
+    border: 1px solid green;
+    }
+
+    @font-face{
+        font-family:'balloons';
+        src:url('fonts/balloons.woff');
+    }
+    @font-face{
+        font-family:'ygbi08';
+        src:url('fonts/ygbi08.woff');
+    }
+    @font-face{
+        font-family:'양재깨비';
+        src:url('fonts/ywda05.woff');
+    }
+    @font-face{
+        font-family:'Indie Flower';
+        src:url('https://fonts.googleapis.com/css?family=Indie+Flower');
+    }
+    @font-face{
+        font-family:'나눔펜';
+        src:url('http://fonts.googleapis.com/earlyaccess/nanumpenscript.css');
+    }
+    
+
+</style>
+
+
+    <body>
+    <fieldset>
+        <legend><h4>폰트 변경</h4></legend>
+        <p id="HelloFont"> Hello Font 대한민국 </p>
+    </fieldset>
+    <fieldset>
+    <h4>Font-Familly</h4>
+    <select onchange="fontFamilyChange(event)">
+        <option value="fontselect">폰트를 선택하세요.</option>
+        <option value="initial">initial</option>
+        <option value="balloons">balloons</option>
+        <option value="ygbi08">wadg</option>
+        <option value="양재깨비">양재깨비</option>
+        <option value="Indie Flower">Indie Flower</option>
+        <option value="나눔펜">나눔펜</option>
+    </select>
+    </fieldset>
+    <fieldset>
+    <h4>Font-Size</h4>
+    <span>0</span><input oninput="fontSizeChange(event)" type="range" name="font-size" min="10" max="50" value="15"  ><span>50</span><br>
+    
+    <label><input type="radio" value="normal" name="fontStyle" onchange="changeStyle(event)">normal</label><br>
+    <label><input type="radio" value="italic" name="fontStyle" onchange="changeStyle(event)">italic</label><br>
+    <!--<label><input type="radio" value="normal" name="fontStyle" onchange="changeStyle(event)">normal</label>
+    <label><input type="radio" value="italic" name="fontStyle" onchange="changeStyle(event)">italic</label>-->
+    </fieldset>
+
+<fieldset>
+    <h4>Font Weight</h4>
+    <label><input type="radio" value="normal" name="fontWeight" onchange="changeWeight(event)">기본</label><br>
+    <label><input type="radio" value="bold" name="fontWeight" onchange="changeWeight(event)">굵게</label><br>
+</fieldset>
+
+<label><input type="text" oninput="text2(event)" >입력해주세요.</label>
+
+
+    <script>
+    function fontFamilyChange(event){
+        var value = event.target.value;
+        console.log(value)
+        // HelloFont.style.fontStyle = value;
+        HelloFont.style.fontFamily = value;
+
+    }
+
+    function fontSizeChange(event){
+        var value = event.target.value;
+        console.log(value);
+        HelloFont.style.fontSize =value +"pt";
+    }
+
+    function changeStyle(event){
+        var value = event.target.value;
+        console.log(value);
+        HelloFont.style.fontStyle = value;
+    }
+     function changeWeight(event){
+        var value = event.target.value;
+        console.log(value);
+        HelloFont.style.fontWeight = value;
+    }
+
+    function text2(event){
+        var value = event.target.value;
+        console.log(value);
+        HelloFont.style.font= value;
+    }
+
+    
+</script>
+
+
+
+    </body>
+</html>

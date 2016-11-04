@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<link href="css/style.css" rel="stylesheet">-->
+	<style>
+		@font-face {
+			font-family: '풍선';
+			src: url('font/balloons.ttf');
+		}
+		
+		@font-face {
+			font-family: '감자';
+			src: url('font/ywda05.woff');
+		}
+		
+		@font-face {
+			font-family: '양재깨비';
+			src: url('font/ygbi08.woff');
+		}
+	</style>
+
+
+
+
+</head>
+
+<body>
+	<p id="Hello">Hello.Font 대한민국</p>
+	<fieldset>
+		<legend>font-family</legend>
+		<select onchange="changeFont(event)">
+            <option value="">--글꼴을 선택하시오--</option>
+			<option value="풍선" style="font-family:'풍선';">balloon</option>
+            <option value="감자" style="font-family:'감자';">wadg</option>
+			<option value="양재깨비" style="font-family:'양재깨비';">양재깨비</option>      
+			<option value="monospace" style="font-family:'monospace';">monospace</option>
+			
+        </select>
+	</fieldset>
+
+	<fieldset>
+		<legend>font-size</legend>
+		<input type="range" name="fontSize" min="0" max="100" onchange="changeSize(event)">
+
+	</fieldset>
+
+	<fieldset>
+		<legend>font-style</legend>
+		Normal<input type=radio name="styleChange" onclick="changeStyle(event)" value="normal"> Itali
+		<input type=radio name="styleChange" onclick="changeStyle(event)" value="italic">
+	</fieldset>
+
+	<fieldset>
+		<legend>font-weight</legend>
+		<input type="text" name="fontweight" oninput="fontWeight(event)">
+	</fieldset>
+	<fieldset>
+		<legend>font-variant</legend>
+		normal<input type=radio name="variantNormal" value="normal" onclick="fontVariant(event)"> small-caps
+		<input type=radio name="variantSmall" value="small-caps" onclick="fontVariant(event)">
+	</fieldset>
+
+
+	<script>
+	function changeFont(e) {
+		var font = e.target.value; 
+		Hello.style.fontFamily=font;
+	};
+
+	function changeSize(e) {
+		var size = e.target.value;
+	    Hello.style.fontSize = e.target.value +"px";
+
+	};
+
+	function changeStyle(e) {
+		console.dir(e);
+		var rdo = e.target;
+	    Hello.style.fontStyle = rdo.value;
+
+	}
+	function fontWeight(e) {
+		alert("normal,bold, bolder, lighter..");
+		var weight = e.target.value;
+		Hello.style.fontWeight = event.target.value;
+	}
+
+	function fontVariant(event) {
+	
+		Hello.style.fontVariant = event.target.value;
+	}
+</script>
+
+</body>
+
+</html>

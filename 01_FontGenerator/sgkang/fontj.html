@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="Ko">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+	@font-face {
+		font-family: 'balloons';
+		src: url('fonts/balloons.woff');
+	}
+
+	@font-face {
+		font-family: 'ygbi08';
+		src: url('fonts/ygbi08.woff');
+	}
+
+	@font-face {
+		font-family: 'ywda05';
+		src: url('fonts/ywda05.woff');
+	}
+</style>
+
+<body>
+	<p id="font_out">Hello Font 대한민국</p>
+
+	<label for="font"> 폰트변경 : </label>
+	<select onchange="changefont(event)">
+		<option value="initial">기본</option>
+		<option value="balloons">balloons</option>
+        <option value="ywda05">WADAG</option>
+		<option value="ygbi08">양재깨비</option>
+</select>
+	<label for="size">폰트크기: 0 <input type="range" name="font_out" min="0" max="50" value="25" oninput="sizefont(event)">50 value: <span id=box1>25</span> </label>
+
+	<p for="itlic">기울이기 :
+		<input type="radio" name="font_out" onclick="italic(event)" value="" checked> normal
+		<input type="radio" name="font_out" onclick="italic(event)" value=italic> italic </p>
+
+
+<label for="bold">굵기 :
+ <input type="radio" name="font_out2" onclick="weight(event)" value="" checked> normal
+ <input type="radio" name="font_out2" onclick="weight(event)" value="bold" > Bold </label>
+
+</body>
+
+<script>
+function changefont(event){
+	var value = event.target.value
+	font_out.style.fontStyle = value;
+	font_out.style.fontFamily = value;
+}
+function sizefont(event){
+ var value = event.target.value;
+ font_out.style.fontSize = value + 'pt';
+ box1.innerHTML= value;
+
+}
+function italic(event){
+var value = event.target.value;
+font_out.style.fontStyle = value;
+
+}
+function weight(event){
+var value = event.target.value;
+console.log(event.target.value)
+font_out.style.fontWeight = value;
+
+}
+
+</script>
+
+</html>

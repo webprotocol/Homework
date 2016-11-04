@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>fontj.html</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    @font-face {
+        font-family: balloons;
+        src : url('fonts/balloons.woff');
+    }
+    @font-face {
+        font-family: 양재깨비;
+        src : url('fonts/ygbi08.woff');
+    }
+    @font-face {
+        font-family: wadag;
+        src : url('fonts/ywda05.woff');
+    }
+    @font-face {
+        font-family: IndieFlower;
+        src : url('fonts/IndieFlower.woff');
+    }
+    @font-face {
+        font-family: 나눔펜글씨;
+        src : url('fonts/NanumPenScript-Regular.woff');
+    }
+</style>
+<body>
+<p id="font_change">Hello Font 대한민국</p>
+<fieldset>
+    <legend>Font-family</legend>
+    <select onchange="changeFfamily(event)">
+        <option value="">--선택--</option>
+        <option value="init">Initial</option>
+        <option value="balloons">balloon</option>
+        <option value="wadag">yj wadag</option>
+        <option value="양재깨비">양재깨비체</option>
+        <option value="IndieFlower">IndieFlower</option>
+        <option value="나눔펜글씨">나눔펜글씨</option>
+    </select>
+</fieldset>
+<fieldset>
+    <legend>Font-size</legend>
+    <div>
+        <input style="width:50%;" type="range" id="fontsize" min="0" max="50" value="0" oninput="changeFsize(event)">
+        <span id="fontsize_out"></span>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Font-style</legend>
+    <label><input type="radio" name="fstyle" value="normal" onchange="changeFstyle(event)">Normal</label>
+    <label><input type="radio" name="fstyle" value="italic" onchange="changeFstyle(event)">Italic</label>
+</fieldset>
+<fieldset>
+    <legend>Font-weight</legend>
+    <select onchange="changeFweight(event)">
+        <option value="">--선택--</option>
+        <option value="normal">normal</option>
+        <option value="bold">bold</option>
+        <option value="lighter">lighter</option>
+        <option value="bolder">bolder</option>
+    </select>
+    <label>100~900 입력하세요<input type="text" oninput="changeFweight1(event)"></label>
+</fieldset>
+<fieldset>
+    <legend>Font-variant</legend>
+    <label><input type="radio" name="fvariant" value="normal" onchange="changeFvariant(event)">Normal</label>
+    <label><input type="radio" name="fvariant" value="small-caps" onchange="changeFvariant(event)">Small-caps</label>
+</fieldset>
+<fieldset>
+    <legend>Font 설정</legend>
+    <input type="text" id="fontchange" oninput="changeFont(event)">
+</fieldset>
+<script>
+    function changeFfamily(event){
+        ffamily = event.target.value;
+        font_change.style.fontFamily = ffamily;
+    }
+    function changeFsize(event) {
+        fsize = event.target.value;
+        font_change.style.fontSize = fsize + "px";
+    }
+    function changeFstyle(event) {
+        f_style = event.target.value;
+        font_change.style.fontStyle = f_style;
+    }
+    function changeFweight(event) {
+        fweight = event.target.value;
+        font_change.style.fontWeight = fweight;
+    }
+    function changeFweight1(event) {
+        fweight1 = event.target.value;
+        font_change.style.fontWeight = fweight1;
+    }
+    function changeFvariant(event) {
+        fvariant = event.target.value;
+        font_change.style.fontVariant = fvariant;
+    }
+    function changeFont(event) {
+        fchange = event.target.value;
+        font_change.style.font = fchange;
+    }
+</script>
+</body>
+</html>

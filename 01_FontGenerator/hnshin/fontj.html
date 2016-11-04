@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Coiny">
+	<style>
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+    #helloPtag{
+        font: small-caps bold  25pt/30pt "Cambria Math" ;
+    }
+    #inputTextStyleChange{
+        width:40%;
+    }
+    #size_out{
+        width:50%;
+    }
+    #SFBalloons{
+    font-family: 'SF Balloons', sans-serif;
+    }
+    #YjWADAG{
+    font-family: 'Yj WADAG', sans-serif;
+    }
+    #양재깨비체B{
+     font-family: '양재깨비체B', sans-serif;
+    }
+    #Hanna{
+     font-family: 'Hanna', sans-serif;
+    }
+    #JejuHallasan{
+      font-family: 'Jeju Hallasan', sans-serif;
+    }
+    #Coiny{
+        font-family: 'Coiny', sans-serif;
+    }
+    fieldset{
+        border: 2px solid coral;
+    }
+	</style>
+    
+</head>
+
+<body>
+    <fieldset>
+        <legend>글자 속성 바꾸기</legend>
+<p id="helloPtag">Hello Font 대한민국</p>
+    </fieldset>
+    
+    <fieldset>
+<span>font-faily 변경 : </span>
+<select id="fontFamily" onchange="fontFamilyChange(event)">
+    <option>---선택하세요----</option>
+    <option value="initial">기본체</option>
+    <option id="SFBalloons" value="SF Balloons">balloons</option>
+    <option id="YjWADAG" value="Yj WADAG">Yj WADAG</option>
+    <option id="양재깨비체B" value="양재깨비체B">양재깨비체B</option>
+    <option id="Hanna" value="Hanna">한나</option>
+    <option id="JejuHallasan" value="Jeju Hallasan">제주 한라산</option>
+    <option id="Coiny" value="Coiny">Coiny</option>
+</select>
+    </fieldset>
+
+<fieldset>
+    <span>Font-Color : </span>
+red<input type="number" min="0" max="255" oninput="ColorRed(event)" placeholder="0 ~ 255">
+green<input type="number" min="0" max="255" oninput="ColorGreen(event)" placeholder="0 ~ 255">
+blue<input type="number" min="0" max="255" oninput="ColorBlue(event)" placeholder="0 ~ 255">
+</fieldset>
+
+<fieldset>
+<span>font-size 변경 : </span>
+<span>0</span><input type="range" oninput="fontSizeChange(event)" min="0" max="50"><span>50</span><br>
+<span id="range_out"></span>
+</fieldset>
+
+<fieldset>
+<span>font-style 변경 : </span>
+<label><input type="radio" value="normal" name="fontStyle" onchange="changeStyle(event)">normal</label>
+<label><input type="radio" value="italic" name="fontStyle" onchange="changeStyle(event)">italic</label>
+</fieldset>
+
+<fieldset>
+    
+<span>font-weight 변경 : </span>
+<select id="fontWeight" onchange="fontWeightChange(event)">
+<option value="initial">initial</option>
+<option value="bold">bold</option>
+</select>
+</fieldset>
+
+<fieldset>
+<span>font 변경 : </span>
+<label for="inputTextStyleChange"><input id="inputTextStyleChange" type="text" oninput="ChangeStyle(event)" placeholder='10pt/10pt "Hanna"'></label>
+</fieldset>
+
+<fieldset>
+    <legend>font-size 결과창</legend>
+<textarea id="size_out" disabled> </textarea>
+</fieldset>
+
+<script >
+var red=0, green=0, blue=0;
+
+    function fontFamilyChange(event){
+        var font = event.target.value;
+        helloPtag.style.fontFamily = font ;
+    }
+
+    function ColorRed(event){
+        red = event.target.value;
+        helloPtag.style.color = 'rgb('+ red + ',' + green + ',' + blue + ')';
+    }
+    function ColorGreen(event){
+        green = event.target.value;
+        helloPtag.style.color = 'rgb('+ red + ',' + green + ',' + blue + ')';
+    }
+    function ColorBlue(event){
+        blue = event.target.value;
+        helloPtag.style.color = 'rgb('+ red + ',' + green + ',' + blue + ')';
+    }
+
+    
+    function fontSizeChange(event){
+        var font = event.target.value;
+        helloPtag.style.fontSize = font + 'pt';
+        size_out.innerHTML = '현재크기는' + font +'입니다';
+    }
+    function changeStyle(event){
+        var font = event.target.value;
+        helloPtag.style.fontStyle = font;
+    }
+function fontWeightChange(event){
+    var font = event.target.value;
+    
+    helloPtag.style.fontWeight =  font  ;
+}
+function ChangeStyle(event){
+    var font  = event.target.value;
+    console.log(font);
+    helloPtag.style.font=font;
+}
+</script>
+
+</body>
+
+</html>

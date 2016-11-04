@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+        div {
+            border: 1px;
+        }
+@font-face {
+		font-family : balloons;
+		src : url('font/balloons.ttf'); 
+	}
+
+	@font-face {
+		font-family : 'ygbi';
+		src : url('font/ygbi08.ttf');
+	}
+	@font-face {
+		font-family : 'wadag';
+		src : url('font/ywda05.ttf');
+	}
+</style>
+
+    </head>
+    <body>
+    <div>
+    <p><h2>Hello Font 대한민국 김석하</h2></p>
+    <p id="font4"> font family </p>
+    <div>
+    <select id="fontfam" onchange="fontChange(event)">
+        <option value="initial"> initial </option>
+        <option value="balloons"> balloons </option>
+        <option value="wadag"> wadg </option>
+        <option value="ygbi"> 양재깨비  </option>
+    </select>
+    </div>
+    <div>
+        
+  Points:
+  <input type="range" name="font5" min="0" max="100" value="50" onClick="font5(event)">
+  
+</form>
+    </div>
+
+    <script>
+        function fontChange (event) {
+        var value = event.target.value;
+        console.log(value);
+        font4.style.fontFamily=value;
+        }
+        function font5 (event) {
+        var value = event.target.value;
+        font4.style.fontSize=value + 'px';
+        }
+          </script>
+    </body>
+</html

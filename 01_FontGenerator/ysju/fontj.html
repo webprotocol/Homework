@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<link href="css/style.css" rel="stylesheet">-->
+	<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+	<style>
+		@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+		
+		@font-face {
+			font-family: balloons;
+			src: url('fonts/balloons.woff');
+		}
+		
+		@font-face {
+			font-family: ygbi;
+			src: url('fonts/ygbi08.woff');
+		}
+		
+		@font-face {
+			font-family: ywda;
+			src: url('fonts/ywda05.woff');
+		}
+		h1 {
+			font-weight:normal;
+			}
+	</style>
+</head>
+
+<body>
+	<h1 id="korea">Hello Font 대한민국</h1>
+<fieldset>
+	<legend>폰트설정</legend>
+	<label for="fFamily">font-family </label><br>
+	<select id="fFamily" onchange="familyChange(event)">
+    <option value="initial">initial</option>
+    <option value="balloons">구름</option>
+    <option value="ygbi">양재깨비</option>
+    <option value="ywda">와닥</option>
+	<option value="Jeju Hallasan">제주한라</option>
+	<option value="Nanum Pen Script">나눔펜</option>
+	<option value="Shrikhand">Shrikhand</option>
+    </select>
+	<br><br>
+
+	<label for="fSize">font-size </label><br>
+	<input type="range" name="fSize" value="25" min="0" max="50" oninput="sizeChange(event)">
+	<br><br>
+	<!--<label for="fSize">font-weight </label>-->
+	<!--<input type="text" name="fWeight" oninput="weightChange(event)"><br>-->
+	<label for="fWeight">font-Weight </label><br>
+	<select id="fWeight" onchange="weightChange(event)">
+    <option value="normal">normal</option>
+    <option value="bold">bold</option>
+    <option value="bolder">bolder</option>
+    <option value="lighter">lighter</option>
+    </select><br><br>
+	<div onclick="styleChange(event)">
+		<label><input type="radio" name="fStyle" value="normal" checked="checked" >normal</label>
+		<label><input type="radio" name="fStyle" value="italic">italic</label><br>
+	</div>
+	<br>
+	<label for="fText">font</label>
+	<input type="text" size="100" name="fText" oninput="fontText(event)">
+</fieldset>
+	<script src="js/fontj.js"></script>
+</body>
+
+</html>

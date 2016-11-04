@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC" rel="stylesheet">
+</head>
+<style>
+    @font-face {
+        font-family: balloons;
+        src: url('fonts/balloons.woff');
+    }
+    
+    @font-face {
+        font-family: 양재깨비;
+        src: url('fonts/ygbi08.woff');
+    }
+    
+    @font-face {
+        font-family: wadag;
+        src: url('fonts/ywda05.woff');
+    }
+    
+    @font-face {
+        font-family: jejuMyeongjo;
+        src: url('fonts/JejoMyeongjo.ttf');
+    }
+
+    p{
+        text-align: center;
+    }
+</style>
+
+<body>
+
+    <p id="Hello">Hello Font 대한민국</p>
+    <fieldset>
+        <legend>font-family</legend>
+        <select id="job" onchange="changeFont(event)">
+            <option>initial</option>
+            <option value="balloons">balloon</option>
+            <option value="wadag">ywda</option>
+            <option value="양재깨비">양재깨비</option>
+            <option value="Alegreya SC">Alegreya SC</option>
+            <option value="JejuMyeongjo">Jeju Myeongjo</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>font-size</legend>
+        <label style="width:50px; display: inline-block;" for="green"></label>
+        <input style="width:70%" id="green" type="range" min="0" max="255" value="0" oninput="changeSize(value)">
+        <!--<span id="green_out">green</span>-->
+    </fieldset>
+
+
+    <fieldset>
+        <legend>font-style</legend>
+        <label><input onchange="changeStyle(value)" type="radio" name="style" value="normal">normal</label>
+        <label> <input onchange="changeStyle(value)" type="radio" name="style" value="italic">italic</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>font-weight</legend>
+        <label><input onchange="changeWeight(value)" type="radio" name="style" value="normal">normal</label>
+        <label><input onchange="changeWeight(value)" type="radio" name="style" value="bold">bold</label>
+        <label><input onchange="changeWeight(value)" type="radio" name="style" value="bolder">bolder</label>
+        <label><input onchange="changeWeight(value)" type="radio" name="style" value="lighter">lighter</label><br>
+        <label for="cname"></label><input id="cname" size="20" placeholder="100~900까지 입력 " oninput="changeWeightByNumber(event)">
+    </fieldset>
+
+    <fieldset>
+        <legend>font-variant</legend>
+        <label><input onchange="changeVariant(value)" type="radio" name="style" value="normal">normal</label>
+        <label><input onchange="changeVariant(value)" type="radio" name="style" value="small-caps">small-caps</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>input box</legend>
+        <label for="cname"></label>
+        <input id="cname" size="20" placeholder="입력하세요" oninput="changeAll(event)">
+    </fieldset>
+
+    <script>
+    function changeFont(event) {
+    console.log(event.target.value);
+    Hello.style['font-family']=event.target.value;
+        }
+
+    function changeSize(value){
+    console.log(value);
+    Hello.style['font-size'] = value + "px";   
+        }
+
+    function changeStyle(value){
+    console.log(value);
+    Hello.style['font-style'] = value ;   
+        }
+
+    function changeVariant(value){
+    console.log(value);
+    Hello.style['font-variant'] = value ;   
+        }
+
+    function changeWeight(value){
+    console.log(value);
+    Hello.style['font-weight'] = value ;   
+        }
+
+    function changeWeightByNumber(value){
+    console.log(event.target.value);
+    Hello.style['font-weight'] = event.target.value ;   
+        }
+
+    function changeAll(value){
+    var value=event.target.value;
+    console.log(value);
+    // Hello.style['font-family']=value;
+    // Hello.style['font-size'] = value + "px";   
+    // Hello.style['font-style'] = value ;  
+    // Hello.style['font-variant'] = value ;   
+    // Hello.style['font-weight'] = value ;
+    Hello.style.font=value;   
+}
+
+</script>
+</body>
+
+</html>

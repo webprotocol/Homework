@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Indie+Flower">
+      
+	<style>
+		@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+		
+		@font-face {
+			font-family: Indie Flower;
+			src: url(https://fonts.googleapis.com/css?family=Indie+Flower);
+		}
+		@font-face {
+			font-family: Nanum Pen Script;
+			src: url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+		}
+
+		@font-face {
+			font-family: balloons;
+			src: url('fonts/balloons.woff');
+		}
+		
+		@font-face {
+			font-family: 양재깨비;
+			src: url('fonts/ygbi08.woff');
+		}
+		
+		@font-face {
+			font-family: ywda05;
+			src: url('fonts/ywda05.woff');
+		}
+	</style>
+</head>
+
+<body>
+	<fieldset>
+		<legend>FONT</legend>
+
+		<p id="family_out"> Hello Font 대한민국</p><br><br>
+
+
+		<label for="family">Font-Family</label><br>
+		<select id="family" onchange="FontFamily(event)">
+<!--/		<select id="family" onchange="family_out.style['font-family']=this.value">-->
+    <option value="" selected>Initial</option>
+    <option value="balloons">Ballom</option>
+    <option value="ywda05">Wadg</option>
+    <option value="양재깨비">양재깨비</option>
+	<option value="Indie Flower">Indie Flower</option>
+	<option value="Nanum Pen Script">Nanum Pen Script</option>
+</select>
+		<br><br><br><br>
+		<label for="fontsize">Font-Size</label><br>
+		<input id="fontsize" type="range" min="0" max="50" value="0" oninput="FontSize(event)">
+		<!--<input id="fontsize" type="range" min="0" max="50" value="0" onchange="family_out.style['font-size']=this.value + 'px'">-->
+		<br><br><br><br>
+
+		<label for="family">Font-Style</label><br>
+		<input type="radio" name="chk" value="" onchange="FontStyle(event)">Nomber
+		<!--<input type="radio" name="chk" value="italic" onchange="family_out.style['font-style']=this.value">Italic-->
+
+		<br><br><br><br>
+
+
+		<label for="wight">Font-Weight</label><br>
+		<input type="radio" name="wi" value="normal" onchange="FontWeight(event)">Nomber
+		<input type="radio" name="wi" value="bold" onchange="FontWeight(event)">Bold
+		<input type="radio" name="wi" value="lighter" onchange="FontWeight(event)">Lighter &nbsp;
+		입력(100~900)<input type="text" name="wi" size="5" value="100" oninput="FontWeight(event)">
+
+		<br><br><br><br>
+
+		<label for="variant">Font-Variant</label><br>
+		<input type="radio" name="va" value="normal" onchange="FontVariant(event)">Nomber
+		<input type="radio" name="va" value="small-caps" onchange="FontVariant(event)">Small-Caps
+
+		<br><br><br><br>
+
+
+		<label for="all">Font</label><br>
+		<input type="text" size="50" oninput="allChange(event)">
+ 
+	</fieldset>
+
+	<script>
+function FontFamily(event){
+	var value = event.target.value;
+	console.log('value'+value);
+	family_out.style['font-family'] = value;
+	}
+	
+function FontSize(event){
+	var value = event.target.value;
+	console.log('value'+value);
+    family_out.style['font-size'] = value + 'px';
+	}
+	
+function FontStyle(event){
+	var value = event.target.value;
+	console.log('value'+value);
+
+	family_out.style['font-style'] = value;
+
+	}
+
+function FontWeight(event){
+	var value = event.target.value;
+	console.log('value'+value);
+	family_out.style['font-weight'] = value;
+	}
+
+	function FontVariant(event){
+	var value = event.target.value;
+	console.log('value'+value);
+	family_out.style['font-variant'] = value;
+	}
+	
+function allChange(event){
+	var value = event.target.value;
+	console.log('value'+value);
+
+//	family_out.style['font-variant'] = value;
+//	family_out.style['font-weight'] = value;
+//	family_out.style['font-style'] = value;
+//	family_out.style['font-size'] = value + 'px';
+//	family_out.style['font-family'] = value;
+	family_out.style.font=value;
+	}
+</script>
+
+</body>
+
+</html>

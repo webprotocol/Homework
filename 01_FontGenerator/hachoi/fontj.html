@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        @font-face {
+            font-family: balloons;
+            src: url('fonts/balloons.woff');
+        }
+        
+        @font-face {
+            font-family: '양재깨비';
+            src: url('fonts/ygbi08.woff');
+        }
+        
+        @font-face {
+            font-family: 'wadag';
+            src: url('fonts/ywda05.woff');
+        }
+        
+        p {
+            width: 700px;
+        }
+        
+        fieldset {
+            border: 2px solid navy;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="aa">Hello Font 대한민국</p>
+    <fieldset>
+        <legend>Font-Family</legend>
+        <select id="job" onchange="changeFont(event)">
+          <option>initial</option>
+          <option value="balloons">balloons</option>
+          <option value="wadag">와닥</option>
+          <option value="양재깨비">양재깨비</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>Font-size</legend>
+        <label style="width:50px; display: inline-block;" " for="red "></label>
+        <input style="width:70% " type="range " id="red " value="0 " min="0 " max="255 " oninput="changeSize(value) ">
+    </fieldset>
+<fieldset>
+    <legend>font-style</legend>
+
+    <label>
+        <input onchange="changeStyle(value) " type="radio " name="style " value="normal ">"normal "</label>
+        <input onchange="changeStyle(value) " type="radio " name="style " value="italic ">"italic "</label>
+             
+    </fieldset>
+    <fieldset>
+        <legend>Font-weight</legend>
+        
+            <label>
+                <input onchange="changeWeight(value) " type="radio " name="style " value="normal ">"normal "
+            </label>
+            <label>
+                <input onchange="changeWeight(value) " type="radio " name="style " value="italic ">"italic "
+            </label>
+            <label><input onchange="changeWeight(value) " type="radio " name="style " value="border ">"border "</label>
+            <label><input onchange="chanegeWeight(value) " type="radio " name="style " value="lighter ">lighter</label>
+            <br>
+            <label for="bbname ">100~900까지 입력</label>
+            <input id="bbname " size="30 " oninput="changeWeightByNumber(event) ">
+            
+    </fieldset>
+
+    <script>
+    function changeFont(event) {
+        console.log(event.target.value);
+        aa.style['font-family']=event.target.value;
+    }
+    function changeSize(value){
+        console.log(value);
+        aa.style['font-size']=value + "px ";
+    }
+    function changeStyle(value){
+        console.log(value);
+        aa.style['font-style']=value;
+    }
+    function changeWeight(value){
+        console.log(value);
+        aa.style['Font-weight']=value;
+    }
+    function changeWeightByNumber(value){
+        console.log(event.target.value);
+        aa.style['font-weight']=event.target.value;
+    }
+       </script>
+
+</body>
+
+</html>

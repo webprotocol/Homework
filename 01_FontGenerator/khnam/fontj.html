@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<title>fontj.html</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Indie+Flower" />
+		<style>
+			@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+			@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+			@font-face {
+				font-family : '풍선';
+				src : url('fonts/balloons.ttf');
+			}
+
+			@font-face {
+				font-family: '와당';
+				src: url('fonts/ywda05.woff');
+			}
+
+			@font-face {
+				font-family : '양재깨비';
+				src: url('fonts/ygi08.woff');
+			}
+		</style>
+	</head>
+	<body>
+		<p id="p_target" style="font-size : 25pt;">Hello Font 대한민국</p>
+
+		<fieldset>
+		<legend>글꼴</legend>
+		<select onchange="changeFont(event)">
+			<option value="">----글꼴선택----</option>
+			<option value="initial">initial</option>
+			<option value="풍선">balloons</option>
+			<option value="와당">YJ WADAG</option>
+			<option value="양재깨비">양재깨비체B</option>
+			<option value="Nanum Pen Script">Nanum Pen Script</option>
+			<option value="Nanum Brush Script">Nanum Brush Script</option>
+		</select>
+
+		<select onchange="changeFontStyle(event)">
+			<option value="">----글꼴스타일----</option>
+			<option value="normal">보통</option>
+			<option value="normal italic">보통 기울임</option>
+			<option value="bold">굵게</option>
+			<option value="bold italic">굵고 기울임</option>
+		</select>
+
+
+		</fieldset>
+
+		<fieldset>
+			<legend>글자크기</legend>
+			<input type="range" min="0" max="50" value="25" oninput="changeSize(event);">
+			<span id="sp_range">25pt</span>
+		</fieldset>
+
+		<fieldset>
+			<legend>폰트일괄변경</legend>
+			<input type="text" size="100" oninput="modFontAll(this);" placeholder="style variant weight size/height family"/>
+		</fieldset>
+
+		<script>
+
+			function changeSize(event) {
+				var size = event.target.value;
+				sp_range.innerHTML = size + 'pt';
+				p_target.style.fontSize = size + 'pt';
+			}
+
+			function changeFont(event) {
+				var sel = event.target;
+				var font = sel.value;
+				if(font) {
+					p_target.style.fontFamily = font;
+				}
+			}
+
+			function changeFontStyle(event) {
+				var sel = event.target;
+				var fontStyle = sel.value;
+				if(fontStyle) {
+					var prop = fontStyle.split(' ');
+					if(prop.length == 1){
+						p_target.style.fontWeight = prop[0];
+						p_target.style.fontStyle = 'normal';
+					}
+					else {
+						p_target.style.fontWeight = prop[0];
+						p_target.style.fontStyle = prop[1];
+					}
+
+				}
+			}
+
+			function modFontAll(txtEl) {
+				var styleAll = txtEl.value.split(' ');
+				var targetStyle = p_target.style;
+
+				targetStyle.fontStyle = styleAll[0];
+				targetStyle.fontVariant = styleAll[1];
+				targetStyle.fontWeight = styleAll[2];
+				targetStyle.fontSize = styleAll[3];
+				targetStyle.fontFamily = styleAll[4];
+
+			}
+		</script>
+	</body>
+</html>

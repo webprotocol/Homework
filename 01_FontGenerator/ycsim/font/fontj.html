@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            
+    @font-face {
+        font-family: balloons;
+        src : url('font/balloons.woff');
+    }
+
+    @font-face {
+        font-family: '양재깨비';
+        src : url('font/ygbi08.woff');
+    }
+
+    @font-face {
+        font-family: 'wadag';
+        src : url('font/ywda05.woff');
+    }
+
+    /*
+     * Pseudo Class
+     */
+    p:nth-child(2) {
+        font-family: '양재깨비';
+        color: red;
+        font-style: italic;
+    }
+    /*
+     * Pseudo Element
+     */
+    p:nth-child(2)::after {
+        content: " 양재깨비체B";
+    }
+
+    p:nth-of-type(3) {
+        font-family: 'wadag';
+    }
+    p:nth-child(3)::after {
+        content: " ";
+    }
+
+    p:nth-of-type(4) {
+        font-family: 'balloons';
+        font-size: 15pt;
+        font-color: purple;
+    }
+    p:nth-child(4)::after {
+        content: "";
+    }
+    body {
+    font-size: 200%;
+
+</style>
+    </head>
+    <body>
+    <p>Hello Font 대한민국</p>
+<select id="mySelect" onchange="myFunction()">
+  <option value="initial">initial</option>
+  <option value='<font face="Balloons">Hello Font 대한민국</font>'>balloon</option>
+  <option value='<font face="wadag">Hello Font 대한민국</font>'>wadg</option>
+  <option value='<font face="양재깨비체B">Hello Font 대한민국</font>'>양재깨비체B</option>
+</select>
+<label for="size">폰트크기: 0 <input type="range" name="font_out" min="0" max="50" value="25" oninput="sizefont(event)">50 value: <span id=box1></span> </label>
+		
+
+<p id="demo"></p>
+<script>
+function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("demo").innerHTML = "<p></p>" + x;
+}
+function sizefont(event){
+ var value = event.target.value;
+ font_out.style.fontSize = value + 'pt';
+ box1.innerHTML= value;
+}
+</script>  
+    </body>
+</html>

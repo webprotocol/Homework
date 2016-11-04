@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace"
+      href="https://fonts.googleapis.com/css?family=Share+Tech+Mono">
+    <style>
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+    #f1 {
+        font-family: 'Covered By Your Grace';
+    }
+
+    #f2 {
+        font-family: 'Hanna';
+    }
+
+    #f3 {
+        font-family: 'Yj WADAG';
+    }
+
+    fieldset {
+        background-color: lemonchiffon;
+        border: 2px dotted darkorange;
+        margin: 10px;
+    }
+
+    label {
+        color : darkslategrey;
+        font-family: 'Share Tech Mono';
+    }
+
+    #b1 {
+        font-weight: bold;
+    }
+
+    #b2 {
+        font-weight: lighter;
+    }
+
+    #b3 {
+        font-weight: bolder;
+    }
+    #i {
+        font-style: italic;
+    }
+    </style>
+</head>
+
+<body>
+        <p id="font_out">Hello Font 대한민국 이희수</p>
+        <hr>
+
+        <fieldset>
+        <label for="size">Font size</label>
+        <input id="size" type="range" min="0pt" max="50pt" value="0" oninput="changeSize(event)">
+        <span id="size_out"></span><br><br>
+        
+            
+        <label for="font">Change font</label><br>
+        <select id="font" onchange="changeFont(event)" >
+            <option value="선택하세요">선택하세요</option>
+            <option value="initial">initial</option>
+            <option id="f1" value="Covered By Your Grace">cover</option>
+            <option id="f2" value="Hanna">Hanna</option>
+            <option id="f3" value="Yj WADAG">ywda</option>
+        </select>
+        
+
+        <label for="style">
+            <p>Font style</p>
+            <input type="radio" name="style" value="normal" onclick="changeNormal(event)">Normal
+            <input id="i" type="radio" name="style" value="italic" onclick="changeItalic(event)">Italic<br>
+        </label><br>
+
+        <label for="weight">Bold</label><br>
+        <select id="font" onchange="changeBolder(event)">
+            <option value="선택하세요">선택하세요</option>
+            <option value="normal">normal</option>
+            <option id="b1" value="bold">bold</option>
+            <option id="b2" value="lighter">lighter</option>
+            <option id="b3" value="bolder">bolder</option>
+        </select>
+        </label>
+        </fieldset>
+        <hr>
+
+        <label for="text">Something ; variant,size,weight,family</label>
+        <p><input id="text_out" type="textarea" oninput="changeFFFont(event)"></p>
+
+</body>
+
+
+<script>
+
+    function changeFont(event) {
+        var value = event.target.value;
+        font_out.style.fontFamily = value;
+    }
+
+    function changeSize(event) {
+        var value = event.target.value;
+        font_out.style.fontSize = value+'pt';
+    }
+
+    function changeNormal(event) {
+        var value = event.target.value; /*자료형 -> var*/
+        font_out.style.fontStyle = value;
+    }
+
+    function changeItalic(event) {
+        var value = event.target.value;
+        font_out.style.fontStyle = value;
+    }
+
+    function changeBolder(event) {
+        var value = event.target.value;
+        font_out.style.fontWeight = value;
+    }
+
+    function changeFFFont(event) {
+        var value = event.target.value;
+        font_out.style.fontWeight = value;
+        font_out.style.fontSize = value;
+        font_out.style.fontVariant = value;
+        font_out.style.fontStyle = value;
+        font_out.style.fontFamily = value;
+    } 
+
+</script>
+</html>
